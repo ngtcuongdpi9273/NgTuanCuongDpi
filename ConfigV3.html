@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENU NTC</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-color: #111;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 360px;
+      background-color: #1c1c1c;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .header h2 {
+      font-size: 16px;
+    }
+
+    .section {
+      background-color: #222;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .section-desc {
+      font-size: 11px;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .toggle {
+      display: inline-block;
+      width: 45px;
+      height: 23px;
+      background-color: red;
+      border-radius: 25px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .toggle::before {
+      content: "";
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      background-color: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: 0.3s;
+    }
+
+    .toggle.active {
+      background-color: #b266ff;
+      box-shadow: 0 0 8px #b266ff, 0 0 16px #b266ff;
+    }
+
+    .toggle.active::before {
+      left: 24px;
+    }
+
+    .config {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .config img {
+      width: 24px;
+    }
+
+    .download-icon {
+      font-size: 18px;
+    }
+
+    .button {
+      background-color: #6a0dad;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #b266ff, 0 0 20px #b266ff inset;
+      border: 2px solid #b266ff;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .button:hover {
+      background-color: #7d3cff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img id="menu-img" src="" alt="FreeFire">
+      <h2>Menu Support Config IOS</h2>
+      <div>✅</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Trick Communnity</div>
+      <div class="section-desc">Hỗ trợ kéo tâm giúp nâng tầm kỹ năng !</div>
+      <div class="toggle" onclick="toggle(this)"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Trigger Infinity Lock</div>
+      <div class="section-desc">Cải thiện cạc bắn hiệu quả khi kéo tâm</div>
+      <div class="toggle" onclick="toggle(this)"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">HeadLock Sensitivity</div>
+      <div class="section-desc">Tăng tốc độ và độ nhạy màn hình.</div>
+      <div class="toggle" onclick="toggle(this)"></div>
+    </div>
+
+    <div class="config">
+      <div>
+        <div class="section-title">Bản quyền Menu x Config</div>
+        <div class="section-desc">đây là sản phẩm chế tạo hợp tác giữa NTC X LVT X NKT
+=> nghiêm cấm ăn cắp chất xám dưới mọi hình thức ！</div>
+      </div>
+      <div class="download-icon">⚠️</div>
+    </div>
+
+    <div class="button" onclick="showMessage()">Bật Chức Năng</div>
+  </div>
+
+  <script>
+    // Toggle trạng thái
+    function toggle(element) {
+      element.classList.toggle('active');
+    }
+
+    // Hiện thông báo khi bấm "Bật Chức Năng"
+    function showMessage() {
+      alert("Kích hoạt thành công cấu hình✅ （ Lưu ý cấu hình chỉ là dạng hỗ trợ kéo tâm nên đừng đòi hỏi quá cao! ）");
+    }
+
+    // Thay đổi hình ảnh trong menu chính bằng URL tùy chọn
+    let menuImageUrl = "https://play-lh.googleusercontent.com/EFJ23Wt96gAPfM29PBArvPci-SoaI0QbB8fO5G1x63NJIcp7M5HNi21HbLQtJBxRDR4"; // <-- Thay đường dẫn ảnh ở đây
+    document.getElementById("menu-img").src = menuImageUrl;
+  </script>
+</body>
+</html>
